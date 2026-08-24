@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: mlorch
+Version: 0.1.0
+Summary: An ML pipeline orchestrator with a from-scratch DAG scheduler, content-addressed dataset versioning, an online/offline feature store, a model registry, drift detection, incremental backfill, and pluggable executors (local/docker/k8s).
+Requires-Python: >=3.12
