@@ -1,0 +1,33 @@
+[tool.pytest.ini_options]
+testpaths = ["packages"]
+python_files = ["test_*.py"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+src = ["packages/perelang/src", "packages/mlorch/src", "packages/digitaltwin/src", "packages/geospat/src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "N"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+namespace_packages = true
+explicit_package_bases = true
+mypy_path = "packages/perelang/src:packages/mlorch/src:packages/digitaltwin/src:packages/geospat/src"
+
+# networkx and pandas ship no py.typed marker and no stub packages are installed in this
+# environment (pip-installing types-networkx / pandas-stubs is out of scope here), so mypy
+# --strict would otherwise fail on `import-untyped` for every module that uses them.
+[[tool.mypy.overrides]]
+module = ["networkx.*", "pandas.*"]
+ignore_missing_imports = true
+
+# llvmlite ships no py.typed marker / stub package either (see the note above for networkx/pandas
+# — same situation, different library): perelang's optional LLVM backend imports it directly.
+[[tool.mypy.overrides]]
+module = ["llvmlite.*"]
+ignore_missing_imports = true
