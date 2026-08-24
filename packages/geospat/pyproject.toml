@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geospat"
+version = "0.1.0"
+description = "A geospatial analysis engine: spatial indexes (R-tree, H3), on-the-fly vector tiles, raster processing, contracted-graph shortest-path routing, and a spatial query DSL."
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
