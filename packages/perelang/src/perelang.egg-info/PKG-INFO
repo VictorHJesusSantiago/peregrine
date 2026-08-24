@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: perelang
+Version: 0.1.0
+Summary: The Peregrine programming language: lexer, parser, Hindley-Milner type checker, IR, bytecode VM, optional LLVM backend, and its toolchain (REPL, formatter, linter, LSP, package manager, docs generator).
+Requires-Python: >=3.12
+Provides-Extra: llvm
+Requires-Dist: llvmlite>=0.48; extra == "llvm"
+Provides-Extra: lsp
+Requires-Dist: pygls>=1.3; extra == "lsp"

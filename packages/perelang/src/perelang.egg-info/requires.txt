@@ -1,0 +1,6 @@
+
+[llvm]
+llvmlite>=0.48
+
+[lsp]
+pygls>=1.3

@@ -1,0 +1,2 @@
+[console_scripts]
+pere = perelang.cli:main
