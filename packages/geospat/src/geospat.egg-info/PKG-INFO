@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: geospat
+Version: 0.1.0
+Summary: A geospatial analysis engine: spatial indexes (R-tree, H3), on-the-fly vector tiles, raster processing, contracted-graph shortest-path routing, and a spatial query DSL.
+Requires-Python: >=3.12
