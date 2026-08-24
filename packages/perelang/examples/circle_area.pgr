@@ -1,0 +1,6 @@
+fn circle_area(radius: Float) -> Float {
+  let pi = 3.14159;
+  pi *. radius *. radius
+}
+
+fn main() -> Float { circle_area(2.0) +. circle_area(3.0) }

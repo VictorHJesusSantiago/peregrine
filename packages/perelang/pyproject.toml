@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "perelang"
+version = "0.1.0"
+description = "The Peregrine programming language: lexer, parser, Hindley-Milner type checker, IR, bytecode VM, optional LLVM backend, and its toolchain (REPL, formatter, linter, LSP, package manager, docs generator)."
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+llvm = ["llvmlite>=0.48"]
+# No `lsp` extra: `lsp_server.py` is a hand-written JSON-RPC-over-stdio server with no
+# third-party dependency (see that module's docstring) — `pygls` was never actually wired up and
+# listing it here would be stale, misleading metadata for an optional extra nothing imports.
+
+[project.scripts]
+pere = "perelang.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

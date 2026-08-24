@@ -1,0 +1,8 @@
+// Closures capture outer bindings by value (see ir.py / vm.py's module docstrings for why
+// by-value capture is sound here: this language has no reassignment).
+fn make_adder(x: Int) -> Int {
+  let add = |y| x + y;
+  add(32)
+}
+
+fn main() -> Int { make_adder(10) }
